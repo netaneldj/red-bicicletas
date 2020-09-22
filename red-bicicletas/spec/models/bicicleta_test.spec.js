@@ -3,7 +3,6 @@ var Bicicleta = require('../../models/bicicleta');
 
 describe('Testing Bicicletas', function(){
     beforeEach(function(done) {
-        mongoose.disconnect();
         var mongoDB = 'mongodb://localhost/testdb';
         mongoose.connect(mongoDB, {useNewUrlParser: true});
 
@@ -51,7 +50,6 @@ describe('Testing Bicicletas', function(){
                 Bicicleta.allBicis(function(err, bicis){
                     expect(bicis.length).toEqual(1);
                     expect(bicis[0].code).toEqual(aBici.code);
-
                     done();
                 })
             });
@@ -67,7 +65,6 @@ describe('Testing Bicicletas', function(){
                 Bicicleta.add(aBici, function(err, newBici){
                     if (err) console.log(err);
                 
-
                     var aBici2= new Bicicleta({code:2, color:"roja", modelo:"urbana"});
                     Bicicleta.add(aBici2, function(err, newBici){
                         if (err) console.log(err);
@@ -75,7 +72,6 @@ describe('Testing Bicicletas', function(){
                             expect(targetBici.code).toBe(aBici.code);
                             expect(targetBici.color).toBe(aBici.color);
                             expect(targetBici.modelo).toBe(aBici.modelo);
-
                             done();
                         });
 

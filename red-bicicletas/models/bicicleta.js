@@ -8,15 +8,15 @@ var bicicletaSchema = new Schema({
     ubicacion: {
         type: [Number], index: {type: '2dsphere', sparse: true}
     }
-});
+})
 
 bicicletaSchema.statics.createInstance = function(code, color, modelo, ubicacion) {
     return new this({
-        code: code,
-        color: color,
-        modelo: modelo,
-        ubicacion: ubicacion
-    });
+        code,
+        color,
+        modelo,
+        ubicacion
+    })
 }
 
 bicicletaSchema.methods.toString = function() {
