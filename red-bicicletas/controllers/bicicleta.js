@@ -33,6 +33,11 @@ exports.bicicleta_update_post = function(req, res) {
     res.redirect('/bicicletas');
 }
 
+exports.bicicleta_show_get=function(req, res){
+    var bici = Bicicleta.findById(req.params.id);
+    res.render('bicicletas/show', {bici});
+}
+
 exports.bicicleta_delete_post = function(req, res) {
     Bicicleta.removeById(req.body.id);
     
