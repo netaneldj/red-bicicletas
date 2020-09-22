@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const Reserva = require('./reserva');
 const crypto = require('crypto');
-const Token = require('./tokenModel');
+const Token = require('./token');
 const bcrypt = require('bcrypt');
 const mailer = require('../mailer/mailer');
 
