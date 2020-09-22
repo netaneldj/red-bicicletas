@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 var Bicicleta = require('../../models/bicicleta');
-const { findById } = require('../../models/bicicleta');
 
 describe('Testing Bicicletas', function(){
     beforeEach(function(done) {
-        var mongoDB = 'mongodb://localhost/testdb';
         mongoose.disconnect();
-        mongoose.connect(mongoDB, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true});
+        var mongoDB = 'mongodb://localhost/testdb';
+        mongoose.connect(mongoDB, {useNewUrlParser: true});
 
         const db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error'));
@@ -58,6 +57,33 @@ describe('Testing Bicicletas', function(){
             });
         });
     });
+
+    describe('Bicicleta.findByCode', ()  => {
+        it('debe devolver la bici con code 1', (done)  => {
+            Bicicleta.allBicis(function(err, bicis){
+                expect(bicis.length).toBe(0);
+
+                var aBici= new Bicicleta({code: 1, color:"verde", modelo:"urbana"});
+                Bicicleta.add(aBici, function(err, newBici){
+                    if (err) console.log(err);
+                
+
+                    var aBici2= new Bicicleta({code:2, color:"roja", modelo:"urbana"});
+                    Bicicleta.add(aBici2, function(err, newBici){
+                        if (err) console.log(err);
+                        Bicicleta.findByCode(1, function (error, targetBici) {
+                            expect(targetBici.code).toBe(aBici.code);
+                            expect(targetBici.color).toBe(aBici.color);
+                            expect(targetBici.modelo).toBe(aBici.modelo);
+
+                            done();
+                        });
+
+                    });
+                });
+            });
+        });
+    });    
 });
 
 /*beforeEach(() => {
