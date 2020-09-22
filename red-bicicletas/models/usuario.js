@@ -10,10 +10,6 @@ const saltRounds = 10;
 
 const Schema = mongoose.Schema;
 
-var usuarioSchema = new Schema({
-    nombre: String,
-});
-
 const validateEmail = function (email) {
   const regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
   return regExp.test(email);
