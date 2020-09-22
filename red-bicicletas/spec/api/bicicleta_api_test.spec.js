@@ -3,7 +3,7 @@ var Bicicleta = require('../../models/bicicleta');
 var request = require('request');
 var server = require('../../bin/www');
 
-var base_url = "http://localhost:3000/api/bicicletas";
+var base_url = "http://localhost:5000/api/bicicletas";
 
 describe('Bicicleta API', () => {
     beforeEach(function(done){
@@ -31,7 +31,7 @@ describe('Bicicleta API', () => {
             var aBici = '{"id":10, "color":"rojo", "modelo":"urbana", "lat":-34, "lng":-54}';
             request.post({
                 headers: headers,
-                url: 'http://localhost:3000/api/bicicletas/create',
+                url: 'http://localhost:5000/api/bicicletas/create',
                 body: aBici
             }, function(error, response, body){
                 expect(response.statusCode).toBe(200);
@@ -49,7 +49,7 @@ describe('Bicicleta API', () => {
             var a = new Bicicleta(1, 'rojo', 'urbana', [-34.584595, -58.408742]);
             Bicicleta.add(a);
             
-            request.get('http://localhost:3000/api/bicicletas', function(error, response, body){
+            request.get('http://localhost:5000/api/bicicletas', function(error, response, body){
                 expect(response.statusCode).toBe(200);
             });
         });
