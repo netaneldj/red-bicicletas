@@ -80,6 +80,10 @@ app.use('/api/usuarios', usuariosAPIRouter);
 app.use('/auth/google', authGoogle);
 app.use('/auth/facebook', authFacebook);
 
+app.use('/privacy_police', function(req, res){
+  res.sendFile('public/privacy_police.html');
+})
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
