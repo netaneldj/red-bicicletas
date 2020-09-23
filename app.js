@@ -50,7 +50,9 @@ app.use(session({
   secret: 'red_biciceasdadasd3424#@|~@#'
 }))
 
-const mongoDB = process.env.MONGO_URI || 'mongodb://localhost/red_bicicletas';
+//'mongodb+srv://admin:admin@red-bicicletas.nqfb9.mongodb.net/<dbname>?retryWrites=true&w=majority'
+//'mongodb://localhost/red_bicicletas'
+const mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB, {
   useNewUrlParser: true
 });
