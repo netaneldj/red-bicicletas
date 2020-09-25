@@ -224,8 +224,8 @@ app.use("/api/usuarios", usuariosAPIRouter());
 app.use("/privacy_policy", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/politicas_de_privacidad.html"));
 });
-app.use("/googlef701b2931731bc86", function (req, res) {
-  res.sendFile(path.join(__dirname, "./public/googlef701b2931731bc86.html"));
+app.use("/google4705337402e4a5b2", function (req, res) {
+  res.sendFile(path.join(__dirname, "./public/google4705337402e4a5b2.html"));
 });
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
