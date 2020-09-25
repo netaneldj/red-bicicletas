@@ -1,32 +1,27 @@
-extends ../includes/layout_bici
+extends ../layout
 
 block content
+  .container.mt-3
     a(href='/bicicletas') Volver
+    hr
+    .m-2
+      h1 Nueva Bicicleta
 
-    br
-    br
-    br
-
-    h1 Nueva Bicicleta
-
-    br
-    br
-
-    form(action='/bicicletas/create' method='post')
-        label(for='id') ID:
-        input#id(type='text' name='id')
-        br
-        label(for='color') Color:
-        input#color(type='text' name='color')
-        br
-        label(for='modelo') Modelo:
-        input#modelo(type='text' name='modelo')
-        br
-        label(for='lat') Latitud:
-        input#modelo(type='text' name='lat')
-        br        
-        label(for='lng') Longitud:
-        input#modelo(type='text' name='lng')
-        br        
-        br
-        input.btn(type='submit' value='OK')
+    .mt-3.mb-3
+      form(action='/bicicletas/create' method='POST')
+        .form-group
+        label(for='code') Code
+        input#id.form-control(type='text' name='code')
+        .form-group
+        label(for='color') Color
+        input#color.form-control(type='text' name='color')
+        .form-group
+        label(for='modelo') Modelo
+        input#modelo.form-control(type='text' name='modelo')
+        .form-group
+        label(for='lat') Latencia
+        input#lat.form-control(type='text' name='lat')
+        .form-group
+        label(for='lng') Longitud
+        input#log.form-control(type='text' name='lng')
+        button.btn.btn-primary.m-2(type='submit') Crear

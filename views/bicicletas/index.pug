@@ -1,29 +1,46 @@
 extends ../layout
 
 block content
-    a(href='/bicicletas/create') Nueva Bicicleta
+  .container.mt-3
+    a(href='/bicicletas/create') Crear Nueva bicicleta
 
-    table.table
-        thead
-            tr
-                th(scope='col') #
-                th(scope='col') Color
-                th(scope='col') Modelo
-                th(scope='col') Ubicación
-                th(scope='col') 
-                th(scope='col')
+    br
 
-        tbody
-            each bici in bicis
-                tr
-                    th(scope='row')= bici.code
-                    td= bici.color
-                    td= bici.modelo
-                    td= bici.ubicacion
-                    td
-						a(href= 'bicicletas/' + bici.id + '/update') Editar
-                    td
-                    form.inline(method='post' action='bicicletas/' + bici.id + '/delete')
-                        input(type='hidden' name='id' value=bici.id)
-                        button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
-                        ='Eliminar'
+    table.table.mt-2.mb-2
+      thead
+        tr
+          th(scope='col') #
+          th(scope='col') Color
+          th(scope='col') Modelo
+          th(scope='col') Ubicación
+          th(scope='col')
+      tbody
+        each bici in bicis
+          tr
+            th(scope='row')
+              =bici.code
+            td=bici.color
+            td=bici.modelo
+            td=bici.ubicacion
+            td
+              form.inline(method="POST" action='/bicicletas/'+bici.id+'/delete')
+                button.link-button(type="submit" name='submit_param' id='submit_value' class="btn-sm btn-block btn-danger")
+                  ="Eliminar"
+              form.inline(method="Get" action='/bicicletas/'+bici.id+'/update')
+                button.link-button(type="submit" name='submit_param' id='submit_value' class="btn-sm btn-block btn-secondary")
+                  ="Actualizar"
+    br
+    br
+    hr
+    a(href='/logout') Cerrar sesión
+
+
+
+
+
+
+
+
+
+
+

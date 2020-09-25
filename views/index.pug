@@ -4,25 +4,25 @@ block content
   // Navigation
   nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
     .container
-      a.navbar-brand.js-scroll-trigger(href='#page-top') Red Bicicletas
+      a.navbar-brand.js-scroll-trigger(href='#page-top') Start Bootstrap
       button.navbar-toggler.navbar-toggler-right(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
         | Menu
         i.fas.fa-bars
       #navbarResponsive.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
           li.nav-item
-            a.nav-link.js-scroll-trigger(href='#about') Nosotros
+            a.nav-link.js-scroll-trigger(href='#about') About
           li.nav-item
             a.nav-link.js-scroll-trigger(href='#projects') Bicicletas
           li.nav-item
-            a.nav-link.js-scroll-trigger(href='#signup') Contacto
+            a.nav-link.js-scroll-trigger(href='#signup') Contact
   // Masthead
   header.masthead
     .container.d-flex.h-100.align-items-center
       .mx-auto.text-center
-        h1.mx-auto.my-0.text-uppercase Red Bicicletas
-        h2.text-white-50.mx-auto.mt-2.mb-5 La primera comunidad online de ciclistas urbanos
-        a.btn.btn-primary.js-scroll-trigger(href='#about') Comenzar
+        h1.mx-auto.my-0.text-uppercase Grayscale
+        h2.text-white-50.mx-auto.mt-2.mb-5 A free, responsive, one page Bootstrap theme created by Start Bootstrap.
+        a.btn.btn-primary.js-scroll-trigger(href='#about') Get Started
   // About
   section#about.about-section.text-center
     .container
@@ -35,9 +35,10 @@ block content
             |                             . The theme is open source, and you can use it for any purpose, personal or commercial.
       img.img-fluid(src='assets/img/ipad.png' alt='')
   // Projects
-  section#projects.projects-section.bg-light
+  section#projects.projects-section.bg-light.pt-5.pb-5
     .container
-      #main_map
+      #mapid
+
   // Signup
   section#signup.signup-section
     .container
@@ -84,11 +85,5 @@ block content
   // Footer
   footer.footer.bg-black.small.text-center.text-white-50
     .container Copyright &copy; Your Website 2020
-  // Bootstrap core JS
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js')
-  // Third party plugin JS
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js')
-  // Core theme JS
-  script(src='/javascripts/scripts.js')
-  script(src='/javascripts/map.js')
+
+

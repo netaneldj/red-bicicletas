@@ -1,7 +1,8 @@
-var express = require('express')
-var router = express.Router();
-var tokenController = require('../controllers/token');
+const express = require("express");
+const router = express.Router();
+const tokenController = require("../controllers/token");
 
-router.get('/confirmation/:token', tokenController.confirmationGet);
-
-module.exports = router;
+module.exports = function () {
+  router.get("/confirmation/:token", tokenController.confirmation_get);
+  return router;
+};
