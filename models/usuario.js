@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
-const Reserva = require("../models/Reserva");
-const Token = require("../models/Token");
+const Reserva = require("./reserva");
+const Token = require("./token");
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;

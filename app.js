@@ -23,8 +23,8 @@ var bicicletasAPIRouter = require("./routes/api/bicicletasAPI.route");
 var usuariosAPIRouter = require("./routes/api/usuariosAPI.route");
 // require("events").EventEmitter.prototype._maxListeners = 0;
 
-const Usuario = require("./models/Usuario");
-const Token = require("./models/Token");
+const Usuario = require("./models/usuario");
+const Token = require("./models/token");
 
 // Sesiones
 let store;

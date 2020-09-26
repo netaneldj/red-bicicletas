@@ -1,4 +1,4 @@
-const Usuario = require("../../models/Usuario");
+const Usuario = require("../../models/usuario");
 
 exports.Usuario_list = async (req, res) => {
   try {

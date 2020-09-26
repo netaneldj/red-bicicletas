@@ -1,7 +1,7 @@
 const request = require("request");
 const mongoose = require("mongoose");
 
-const Bicicleta = require("../../models/Bicicleta");
+const Bicicleta = require("../../models/bicicleta");
 
 const server = require("../../bin/www");
 const host = "http://localhost:3000/api/bicicletas";

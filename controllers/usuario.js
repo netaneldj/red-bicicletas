@@ -1,4 +1,4 @@
-const Usuario = require("../models/Usuario");
+const Usuario = require("../models/usuario");
 
 exports.usuario_list = function (req, res, next) {
   Usuario.find({}, (err, usuarios) => {

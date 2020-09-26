@@ -1,4 +1,4 @@
-const Bicicleta = require("../models/Bicicleta");
+const Bicicleta = require("../models/bicicleta");
 
 exports.Bicicleta_list = async (req, res) => {
   try {

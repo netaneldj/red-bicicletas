@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const Bicicleta = require("../../models/Bicicleta");
-const Usuario = require("../../models/Usuario");
-const Reserva = require("../../models/Reserva");
+const Bicicleta = require("../../models/bicicleta");
+const Usuario = require("../../models/usuario");
+const Reserva = require("../../models/reserva");
 
 describe("Usuario.Modelo", () => {
   console.log("\n>-----Se Inicio Test Modulo Usuarios -----<\n");

@@ -1,5 +1,5 @@
-var Usuario = require('../models/Usuario');
-var Token = require('../models/Token');
+var Usuario = require('../models/usuario');
+var Token = require('../models/token');
 
 exports.confirmation_get = function (req, res, next) {
     Token.findOne({ token: req.params.token }, function (err, token) {

@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const Usuario = require("../../models/Usuario");
+const Usuario = require("../../models/usuario");
 
 exports.authenticate = function (req, res, next) {
   Usuario.findOne({ email: req.body.email }, function (err, usuario) {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Bicicleta = require("../../models/Bicicleta");
+const Bicicleta = require("../../models/bicicleta");
 
 describe("Bicicleta.Modelo", () => {
   console.log("\n>-----Se Inicio Test Modulo Bicicletas -----<\n");
