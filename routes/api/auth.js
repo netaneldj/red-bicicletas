@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 
-const authControllerAPI = require("../../controllers/api/authAPI.controller");
+const authControllerAPI = require("../../controllers/api/authControllerApi");
 
 module.exports = function () {
   router.post("/authenticate", authControllerAPI.authenticate);

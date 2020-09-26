@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const bicicletaAPIController = require("../../controllers/api/bicicletasAPI.controller");
+const bicicletaAPIController = require("../../controllers/api/bicicletasControllerApi");
 
 module.exports = function () {
   router.get("/", bicicletaAPIController.Bicicleta_list);

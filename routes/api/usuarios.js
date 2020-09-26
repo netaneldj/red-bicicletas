@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const usuarioAPIController = require("../../controllers/api/usuariosAPI.controller");
+const usuarioAPIController = require("../../controllers/api/usuariosControllerApi");
 
 module.exports = function () {
   router.get("/", usuarioAPIController.Usuario_list);
