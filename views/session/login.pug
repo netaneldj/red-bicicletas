@@ -23,11 +23,11 @@ block content
                                 h3.login-heading.mb-4 Welcome back!
                                 form(action="/login" method="post")
                                     .form-label-group
-                                        input#inputEmail.form-control(type='email' placeholder='Email address' name='email' required='' autofocus='')
-                                        label(for='inputEmail') Email address
+                                        input#username.form-control(type='email' placeholder='Email address' name='username' required='' autofocus='')
+                                        label(for='username') Email address
                                     .form-label-group
-                                        input#inputPassword.form-control(type='password' placeholder='Password' name='password' required='')
-                                        label(for='inputPassword') Password
+                                        input#password.form-control(type='password' placeholder='Password' name='password' required='')
+                                        label(for='password') Password
                                     .custom-control.custom-checkbox.mb-3
                                         input#customCheck1.custom-control-input(type='checkbox')
                                         label.custom-control-label(for='customCheck1') Remember password
@@ -46,5 +46,4 @@ block content
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js")
-    //- script(src='/../javascripts/loginModal.js')
 

@@ -2,4 +2,7 @@
 a {
   color: #00B7FF;
 }
-#mapid { height: 600px; }
+
+div#main_map{
+  height: 600px;
+}
