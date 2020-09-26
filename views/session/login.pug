@@ -21,28 +21,28 @@ block content
                                 if info
                                     .alert.alert-danger(role='alert')
                                         | #{info.message}
-                                h3.login-heading.mb-4 Welcome back!
+                                h3.login-heading.mb-4 Bienvenido!
                                 form(action="/login" method="post")
                                     .form-label-group
                                         input#username.form-control(type='email' placeholder='Email address' name='username' required='' autofocus='')
-                                        label(for='username') Email address
+                                        label(for='username') Email
                                     .form-label-group
                                         input#password.form-control(type='password' placeholder='Password' name='password' required='')
-                                        label(for='password') Password
+                                        label(for='password') Contraseña
                                     .custom-control.custom-checkbox.mb-3
                                         input#customCheck1.custom-control-input(type='checkbox')
-                                        label.custom-control-label(for='customCheck1') Remember password
+                                        label.custom-control-label(for='customCheck1') Recordar contraseña
                                     button.btn.btn-lg.btn-primary.btn-block.btn-login.text-uppercase.font-weight-bold.mb-2(type='submit') Sign in
                                     .text-center
-                                        a.small(href='/login/forgotPassword') Forgot password?
+                                        a.small(href='/forgotPassword') Olvido contraseña?
                                     hr.my-4
                                 form(action="/auth/google" method="get")
                                     button.btn.btn-lg.btn-google.btn-block.btn-login.text-uppercase.font-weight-bold(type='submit')
                                         i.fab.fa-google.mr-2
-                                        |  Sign in with Google
-                                    button.btn.btn-lg.btn-facebook.btn-block.btn-login.text-uppercase.font-weight-bold(type='submit')
+                                        |  Registrarme con Google
+                                    //button.btn.btn-lg.btn-facebook.btn-block.btn-login.text-uppercase.font-weight-bold(type='submit')
                                         i.fab.fa-facebook-f.mr-2
-                                        |  Sign in with Facebook
+                                        |  Registrarme con Facebook
     
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
