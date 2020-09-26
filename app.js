@@ -106,7 +106,7 @@ app.post("/login", function (req, res, next) {
         return next(err);
       }
 
-      return res.redirect("/");
+      return res.redirect("/bicicletas");
     });
   })(req, res, next);
 });
