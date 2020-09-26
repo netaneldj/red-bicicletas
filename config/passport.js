@@ -1,10 +1,8 @@
 var passport = require("passport");
+var Usuario = require("../models/Usuario");
 const LocalStrategy = require("passport-local").Strategy;
-// const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 const FacebookTokenStrategy = require("passport-facebook-token");
-
-var Usuario = require("../models/Usuario");
 
 passport.use(
   new LocalStrategy(function (email, password, done) {
