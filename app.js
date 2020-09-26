@@ -18,9 +18,9 @@ var usersRouter = require("./routes/usuarios");
 var tokenRouter = require("./routes/token");
 var bicicletasRouter = require("./routes/bicicletas.route");
 
-var authAPIRouter = require("./routes/api/authApi.route");
-var bicicletasAPIRouter = require("./routes/api/bicicletasAPI.route");
-var usuariosAPIRouter = require("./routes/api/usuariosAPI.route");
+var authAPIRouter = require("./routes/api/auth");
+var bicicletasAPIRouter = require("./routes/api/bicicletas");
+var usuariosAPIRouter = require("./routes/api/usuarios");
 // require("events").EventEmitter.prototype._maxListeners = 0;
 
 const Usuario = require("./models/usuario");
