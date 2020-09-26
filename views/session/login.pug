@@ -1,33 +1,50 @@
+
+script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+
 head
-  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous')
-  script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
-  script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
-  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous')
+    link(href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' rel='stylesheet')
+    link(href='/stylesheets/login.css' rel='stylesheet')
 
-  link(rel='stylesheet' href='../../stylesheets/login.css')
-  meta(name='google-site-verification' content='pxOa2Qv7Wq0cQ78SbERxoOVDxJ-XbKHZL8rvLmki3xs')
+block content
+    .container-fluid
+        .row.no-gutter
+            .d-none.d-md-flex.col-md-4.col-lg-6.bg-image
+            .col-md-8.col-lg-6
+                .login.d-flex.align-items-center.py-5
+                    .container
+                        .row
+                            .col-md-9.col-lg-8.mx-auto
+                                if info
+                                    .alert.alert-danger(role='alert')
+                                        | #{info.message}
+                                h3.login-heading.mb-4 Welcome back!
+                                form(action="/login" method="post")
+                                    .form-label-group
+                                        input#inputEmail.form-control(type='email' placeholder='Email address' name='email' required='' autofocus='')
+                                        label(for='inputEmail') Email address
+                                    .form-label-group
+                                        input#inputPassword.form-control(type='password' placeholder='Password' name='password' required='')
+                                        label(for='inputPassword') Password
+                                    .custom-control.custom-checkbox.mb-3
+                                        input#customCheck1.custom-control-input(type='checkbox')
+                                        label.custom-control-label(for='customCheck1') Remember password
+                                    button.btn.btn-lg.btn-primary.btn-block.btn-login.text-uppercase.font-weight-bold.mb-2(type='submit') Sign in
+                                    .text-center
+                                        a.small(href='/login/forgotPassword') Forgot password?
+                                    hr.my-4
+                                form(action="/auth/google" method="get")
+                                    button.btn.btn-lg.btn-google.btn-block.btn-login.text-uppercase.font-weight-bold(type='submit')
+                                        i.fab.fa-google.mr-2
+                                        |  Sign in with Google
+                                    button.btn.btn-lg.btn-facebook.btn-block.btn-login.text-uppercase.font-weight-bold(type='submit')
+                                        i.fab.fa-facebook-f.mr-2
+                                        |  Sign in with Facebook
+    
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js")
+    //- script(src='/../javascripts/loginModal.js')
 
-body#LoginForm
-  .container
-    .login-form
-      .main-div
-        .panel
-          if info && info.message 
-            div.alert.alert-danger= info.message
-
-          h2 Admin Login
-          p Por favor, ingrese su email and password
-
-        form#Login(action='/login' method='post')
-          .form-group
-            input#username.form-control(type='email' placeholder='Email Address' name="username")
-          .form-group
-            input#password.form-control(type='password' placeholder='Password' name="password")
-          .forgot
-            a(href='/forgotPassword') Olvidé mi password
-            hr
-            a(href='/auth/google') Log In con Google
-            hr
-            a(href="/api/auth/facebook_token") Log In con Facebook            
-
-          button.btn.btn-primary(type='submit') Login
