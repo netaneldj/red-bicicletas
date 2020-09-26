@@ -1,6 +1,6 @@
 const container = document.getElementById("mapid");
 if (container) {
-  var mymap = L.map("mapid").setView([14.602576, -87.832394], 13);
+  var mymap = L.map("mapid").setView([-34.586842, -58.395056], 13);
 
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -16,10 +16,10 @@ if (container) {
     }
   ).addTo(mymap);
 
-  var marker = L.marker([14.602576, -87.832394]).addTo(mymap);
+  var marker = L.marker([-34.568455, -58.417751]).addTo(mymap);
 
-  var marker = L.marker([14.6030133,-87.8335945]).addTo(mymap);
+  var marker = L.marker([-34.605295, -58.436372]).addTo(mymap);
   
-  var marker = L.marker([14.6106663,-87.8304576]).addTo(mymap);
+  var marker = L.marker([-34.608181, -58.352275]).addTo(mymap);
 
 }
